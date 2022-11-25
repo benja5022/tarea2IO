@@ -111,7 +111,7 @@ public class AlgoritmoGenetico {
         probabilidadSoluciones.add(0.0);
         
         for(int i= 1; i < this.solucionesIniciales.length; i++){
-            
+            System.out.println("");
             System.out.println(this.calculoFuncionObjetivo(i) +" + "+ probabilidadSoluciones.get(i-1));
             probabilidadSoluciones.add( (this.calculoFuncionObjetivo(i)/suma + probabilidadSoluciones.get(i-1)) );
         }
@@ -130,7 +130,7 @@ public class AlgoritmoGenetico {
         
     public boolean cumpleRestriccion(int numSolucion){
         this.asignacion = new double[36];
-        
+        //System.out.println("--------------");
         for(int i = 0; i< 36; i++){
             if(this.solucionesIniciales[numSolucion][i] != 0){
                 //System.out.println(i+2);
@@ -142,8 +142,9 @@ public class AlgoritmoGenetico {
                     }
                 }
             }
+            //System.out.println(" "+solucionesIniciales[numSolucion][i]);
         }
-        
+        //System.out.println("----------------");
         int cont = 0;
         for(int i = 0; i < 36; i++){
             if(this.asignacion[i] == 1)
@@ -153,10 +154,10 @@ public class AlgoritmoGenetico {
         }
         
         if(cont == 36){
-            System.out.println("Sí");
+            //System.out.println("Sí");
             return true;
         }
-        System.out.println("No");
+        //System.out.println("No");
         return false;
     }
     
@@ -184,13 +185,15 @@ public class AlgoritmoGenetico {
 
     public double calculoFuncionObjetivo(int solucionActual) {
         double valorFuncion = 0.0;
-        
+        boolean isSolucion = false;
         for(int i= 0; i < 36; i++){
             if(this.solucionesIniciales[solucionActual][i] == 1){
                 valorFuncion += this.costos[i] ;
             }
         }
-        
+        isSolucion = cumpleRestriccion(solucionActual);
+        System.out.println("La funcion "+solucionActual+" es: "+ isSolucion + " y su valor es: " + valorFuncion);
+        if(isSolucion == false) valorFuncion += 38.2; //Explicar por que se utiliza el valor 38.2
         return valorFuncion;
     }
     
