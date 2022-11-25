@@ -17,16 +17,17 @@ public class main {
         double[] costos = {1, 1.5, 1.2, 2, 3, 2, 1, 1, 3, 4, 3, 3, 2, 2.5, 1.5, 2, 2, 3,
         2, 2, 3, 2, 3, 3, 1, 2.5, 2, 3.5, 2, 1.5, 2, 3, 3.5, 2, 2.5, 1.5};
         
-        int[] solucionInicial1 = {0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0,
-        1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1};
-        int[] solucionInicial2 = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-        int[] solucionInicial3 = new int[36];
-        solucionInicial3[5] = 1;
-        int[] solucionInicial4 = {1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0,
-        1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1};
+        int[] solucionInicial1 = {0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0,
+        0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1};
+        int[] solucionInicial2 = {0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0};
+        int[] solucionInicial3 = {0,1,0,1,1,0,1,0,0,1,0,0,0,0,1,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,1,0,0,0,1,0};
+        int[] solucionInicial4 = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0,
+        1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0};
+        int[] solucionInicial5 = {0,1,0,1,1,0,1,0,0,1,0,0,0,0,1,1,1,0,1,0,1,0,0,1,1,0,0,1,0,0,0,1,0,0,1,1};
+        int[] solucionInicial6 = {0,1,1,0,1,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,1,0,0,1,1,0,1,0,0,0,0,0,1,0,1,1};
         
-        int[][] soluciones = {solucionInicial1 , solucionInicial2, solucionInicial3, solucionInicial4};
+        int[][] soluciones = {solucionInicial1 , solucionInicial2, solucionInicial3, solucionInicial4, solucionInicial5, solucionInicial6};
         
         String[] nombresCiudades = {"Calle Larga", "San Esteban","Rinconada","Los Andes","Cabildo","La Ligua","Papudo",
             "Petorca","Zapallar","Hijuelas","La Calera","La Cruz","Limache","Nogales","Olmué","Quillota","Algarrobo","Cartagena",
