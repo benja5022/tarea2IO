@@ -42,7 +42,7 @@ public class main {
             coleccionCiudades[i].setImpacto(matriz[i]);
         }
         
-        AlgoritmoGenetico ag = new AlgoritmoGenetico(costos, coleccionCiudades,2,soluciones);
+        AlgoritmoGenetico ag = new AlgoritmoGenetico(costos, coleccionCiudades,soluciones);
         //ag.imprimirCiudades();
         ag.imprimirSoluciones();
         

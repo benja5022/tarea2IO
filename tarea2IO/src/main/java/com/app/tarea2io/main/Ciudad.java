@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.app.tarea2io.main;
 
 /**
- *
- * @author benja
+ * Esta clase contiene los atributos y métodos de una ciudad
+ * @author María Ignacia Morales Soriano
+ * @author Andrés Vidal Soto
+ * @author Benjamín Rojas Henríquez
+ * @version 1.3
  */
 public class Ciudad {
     private int id;
@@ -31,7 +29,4 @@ public class Ciudad {
     public int obtenerEstado(int i){
         return (int) this.impacto[i];
     }
-    
-    
-    
 }
