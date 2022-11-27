@@ -17,16 +17,15 @@ public class main {
         double[] costos = {1, 1.5, 1.2, 2, 3, 2, 1, 1, 3, 4, 3, 3, 2, 2.5, 1.5, 2, 2, 3,
         2, 2, 3, 2, 3, 3, 1, 2.5, 2, 3.5, 2, 1.5, 2, 3, 3.5, 2, 2.5, 1.5};
         
-        int[] solucionInicial1 = {0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0,
-        0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1};
-        int[] solucionInicial2 = {0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0};
-        int[] solucionInicial3 = {0,1,0,1,1,0,1,0,0,1,0,0,0,0,1,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,1,0,0,0,1,0};
-        int[] solucionInicial4 = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0,
-        1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0};
+        //int[] solucionInicial1 = {0,1,0,0,0,1,0,0,0,1,0,0,1,0,0,0,1,0,0,1,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,1};// = 21.0
+        int[] solucionInicial1 = {0,1,0,0,0,1,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1}; //no factible valor 55.2
+        //int[] solucionInicial2 = {0,1,1,0,1,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0};// = 21.2
+        int[] solucionInicial2 = {0,1,1,0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,0};
+        int[] solucionInicial3 = {0,1,0,1,1,0,1,0,0,1,0,0,0,0,1,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,1,0,0,0,1,0}; 
+        int[] solucionInicial4 = {1,0,0,0,0,1,0,1,0,0,0,1,0,0,1,0,1,0,1,0,1,0,1,1,0,0,0,1,1,1,0,1,0,0,1,0};
         int[] solucionInicial5 = {0,1,0,1,1,0,1,0,0,1,0,0,0,0,1,1,1,0,1,0,1,0,0,1,1,0,0,1,0,0,0,1,0,0,1,1};
-        int[] solucionInicial6 = {0,1,1,0,1,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,1,0,0,1,1,0,1,0,0,0,0,0,1,0,1,1};
-        
+        //int[] solucionInicial6 = {0,1,1,0,1,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,1,0,0,1,1,0,1,0,0,0,0,0,1,0,1,1};
+        int[] solucionInicial6 = {0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0};
         int[][] soluciones = {solucionInicial1 , solucionInicial2, solucionInicial3, solucionInicial4, solucionInicial5, solucionInicial6};
         
         String[] nombresCiudades = {"Calle Larga", "San Esteban","Rinconada","Los Andes","Cabildo","La Ligua","Papudo",
@@ -62,7 +61,16 @@ public class main {
         
         //ag.cruzamientoEnDosPuntos(1, 2);
         
-        ag.seleccionRuleta(2);
+        //ag.seleccionRuleta(2);
+        System.out.println("Generacion inicial");
+        ag.mostrarResultados();
+        for(int i = 0 ; i < 10; i++){
+            
+            ag.inicializarMetaheuristica();
+            System.out.println(" ");
+            System.out.println("Generacion "+ (i+1));
+            ag.mostrarResultados();
+        }
         
         
         //System.out.println(costos.length+ " "+ solucionInicial1.length);
