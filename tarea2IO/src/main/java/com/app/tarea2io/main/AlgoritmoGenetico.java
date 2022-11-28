@@ -72,51 +72,47 @@ public class AlgoritmoGenetico {
         }
     }
     public void mostrarResultados(){
+        //muestra las soluciones seleccionadas 
         for(int i = 0; i < 6 ; i++){
             if(cumpleRestriccion(this.solucionesIniciales[i])){
                 System.out.println("La solucion: "+i+" Es "+Arrays.toString(this.solucionesIniciales[i])+" y tiene un valor de: "+calcularSolucionObjetivo(this.solucionesIniciales[i]));
             }else{
+                //a esta solucion se le debe aplicar una penalizacion debido a que esta no cumple con los requesitos para ser una solucion viable
                 System.out.println("La solucion: "+i+" Es "+Arrays.toString(this.solucionesIniciales[i])+" y tiene un valor de: "+(calcularSolucionObjetivo(this.solucionesIniciales[i])+38.2)+" Pero es una solucion no factible");                
             }
-            //if(!cumpleRestriccion(this.solucionesIniciales[i])) System.out.println("La solucion: " + i + " No es factible");
         }
         System.out.println(" ");
     }
     private int[][] seleccionElitista(int[][] hijos) {
-        int [][] conjuntoSolucion = new int[6][36];
-        double [] valoresSoluciones = new double[8];
+        int [][] conjuntoSolucion = new int[6][36]; //Este será el nuevo conjunto solucion comparando tanto padres como hijos
+        double [] valoresSoluciones = new double[8]; //valores de las solucines de tanto hijos como padres respectivamente
         double menor = 81; // este valor supera la solucion menos optima
         int i, j;
-        for(i = 0; i < 2; i++){
+        for(i = 0; i < 2; i++){ //valoresSoluciones tendra los valores de la solucion objetivo
             valoresSoluciones[i] = calcularSolucionObjetivo(hijos[i]);
-            if(!cumpleRestriccion(hijos[i])){
+            if(!cumpleRestriccion(hijos[i])){ //aplicamos la penalizacion
                 valoresSoluciones[i] += 38.2;
             }
         }
-        for(i = 2, j = 0; i < 8; i++,j++){
+        for(i = 2, j = 0; i < 8; i++,j++){ //valoresSoluciones tendra los valores de la solucion objetivo
             valoresSoluciones[i] = calcularSolucionObjetivo(this.solucionesIniciales[j]);
-            if(!cumpleRestriccion(this.solucionesIniciales[j])){
+            if(!cumpleRestriccion(this.solucionesIniciales[j])){ //aplicamos la penalizacion
                 valoresSoluciones[i] += 38.2;
             }
         }
         
-        for(i = 0; i < 8; i++){
-            //System.out.println("solucion "+ i + " es: " + valoresSoluciones[i]);
-        }
         for(i = 0; i < 6; i++){
             int indiceActual = 0;
             menor = 81;
-            for(j = 0; j < 8 ; j++){
+            for(j = 0; j < 8 ; j++){ //Se guarda la solucion del valor mas bajo para que esta sea seleccionada para la siguiente generacion.
                 if(menor > valoresSoluciones[j]){
                     menor = valoresSoluciones[j];
                     indiceActual = j;
-                    
                 }
             }
-            valoresSoluciones[indiceActual] = 82;
-            //System.out.println("la solucion menor es: " + menor + " y se encuentra en la posicion: "+ indiceActual);
-            if(indiceActual > 1){
-                conjuntoSolucion[i] = this.solucionesIniciales[indiceActual - 2];
+            valoresSoluciones[indiceActual] = 82; //El valor seleccionado debe ser cambiado por un valor que no pueda ser seleccionable. 82 es un numero que supera  el caso menos optimo para este problema en particular
+            if(indiceActual > 1){ // Se guardan las soluciones que seran utilizadas en la siguiente generacion.
+                conjuntoSolucion[i] = this.solucionesIniciales[indiceActual - 2]; 
             }else{
                 conjuntoSolucion[i] = hijos[indiceActual];
             }
