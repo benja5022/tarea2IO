@@ -1,3 +1,5 @@
 com\app\tarea2io\main\main.class
+com\app\tarea2io\main\LectorCSV.class
+com\app\tarea2io\main\Ciudad.class
 com\app\tarea2io\main\SimulatedAnnealing.class
 com\app\tarea2io\main\AlgoritmoGenetico.class

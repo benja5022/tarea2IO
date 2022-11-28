@@ -1,6 +1,7 @@
 package com.app.tarea2io.main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -58,22 +59,87 @@ public class AlgoritmoGenetico {
             // paso 3) Se mutan los hijos
             hijos = this.mutacion(hijos);
             
-            for(int i = 0; i < hijos.length; i++){
-                for(int k = 0; k < 36; k++){
-                    System.out.print(hijos[i][k]);
+            for(int i = 0; i < 2; i++){
+                if(cumpleRestriccion(hijos[i])){
+                System.out.println("Los hijos de esta generacion son: " + Arrays.toString(hijos[i])+ " y tienen un valor de: " +calcularSolucionObjetivo(hijos[i]));
+                }else{
+                    System.out.println("Los hijos de esta generacion son: " + Arrays.toString(hijos[i])+ " y tienen un valor de: " +(calcularSolucionObjetivo(hijos[i])+38.2)+" Pero es una solucion no factible");                
                 }
-                System.out.println("");
-            }
-
-            for(int i = 0; i < hijos.length; i++){
-                System.out.println("Min: "+this.calculoFuncionObjetivoMinimizacion(hijos[i])+ " Normal: ");
-                System.out.println(this.cumpleRestriccion(hijos[i]));
+                //System.out.println("Los hijos de esta generacion son: " + Arrays.toString(hijos[i])+ " y tienen un valor de: " + );
             }
             // paso 4)
-            
+            this.solucionesIniciales = seleccionElitista(hijos);
         }
     }
+    public void mostrarResultados(){
+        for(int i = 0; i < 6 ; i++){
+            if(cumpleRestriccion(this.solucionesIniciales[i])){
+                System.out.println("La solucion: "+i+" Es "+Arrays.toString(this.solucionesIniciales[i])+" y tiene un valor de: "+calcularSolucionObjetivo(this.solucionesIniciales[i]));
+            }else{
+                System.out.println("La solucion: "+i+" Es "+Arrays.toString(this.solucionesIniciales[i])+" y tiene un valor de: "+(calcularSolucionObjetivo(this.solucionesIniciales[i])+38.2)+" Pero es una solucion no factible");                
+            }
+            //if(!cumpleRestriccion(this.solucionesIniciales[i])) System.out.println("La solucion: " + i + " No es factible");
+        }
+        System.out.println(" ");
+    }
+    private int[][] seleccionElitista(int[][] hijos) {
+        int [][] conjuntoSolucion = new int[6][36];
+        double [] valoresSoluciones = new double[8];
+        double menor = 81; // este valor supera la solucion menos optima
+        int i, j;
+        for(i = 0; i < 2; i++){
+            valoresSoluciones[i] = calcularSolucionObjetivo(hijos[i]);
+            if(!cumpleRestriccion(hijos[i])){
+                valoresSoluciones[i] += 38.2;
+            }
+        }
+        for(i = 2, j = 0; i < 8; i++,j++){
+            valoresSoluciones[i] = calcularSolucionObjetivo(this.solucionesIniciales[j]);
+            if(!cumpleRestriccion(this.solucionesIniciales[j])){
+                valoresSoluciones[i] += 38.2;
+            }
+        }
+        
+        for(i = 0; i < 8; i++){
+            //System.out.println("solucion "+ i + " es: " + valoresSoluciones[i]);
+        }
+        for(i = 0; i < 6; i++){
+            int indiceActual = 0;
+            menor = 81;
+            for(j = 0; j < 8 ; j++){
+                if(menor > valoresSoluciones[j]){
+                    menor = valoresSoluciones[j];
+                    indiceActual = j;
+                    
+                }
+            }
+            valoresSoluciones[indiceActual] = 82;
+            //System.out.println("la solucion menor es: " + menor + " y se encuentra en la posicion: "+ indiceActual);
+            if(indiceActual > 1){
+                conjuntoSolucion[i] = this.solucionesIniciales[indiceActual - 2];
+            }else{
+                conjuntoSolucion[i] = hijos[indiceActual];
+            }
+            
+        }
+        
+        return conjuntoSolucion;
+    }
     
+    private double calcularSolucionObjetivo(int hijos[]){
+        double solucion = 0.0;
+        for(int i = 0 ; i < 36 ; i++){
+            if(hijos[i] == 1){
+                solucion += this.costos[i];
+            }
+            
+        }
+        /*if(!cumpleRestriccion(hijos)){
+            solucion += 38.2;
+        }*/
+        
+        return solucion;
+    }
     /**
      * Método que realiza el cruzamiento en dos puntos
      * @param solucion1 padre o solución inicial obtenida del método seleccionRuleta()
@@ -353,9 +419,9 @@ public class AlgoritmoGenetico {
     public void imprimirCiudades(){
         for(int i = 0; i< 36; i++){
             for(int j = 0; j < 36; j++){
-                System.out.print(this.ciudades[i].obtenerEstado(j));
+                //System.out.print(this.ciudades[i].obtenerEstado(j));
             }
-            System.out.println();
+            //System.out.println();
         }
     }
     
@@ -368,9 +434,9 @@ public class AlgoritmoGenetico {
         
         for(int i= 0; i < sizei; i++){
             for(int j = 0; j < sizej; j++){
-                System.out.print(this.solucionesIniciales[i][j]);
+                //System.out.print(this.solucionesIniciales[i][j]);
             }
-            System.out.println();
+            //System.out.println();
         }
     }
     
@@ -445,13 +511,16 @@ public class AlgoritmoGenetico {
         
         for(int i= 0; i < 36; i++){
             if(solucion[i] == 1){
+                    
                     valorFuncion += this.costos[i] ;
             }
         }
         
         // Si la solucion no es factible, se le suma un costo extra
         if(!this.cumpleRestriccion(solucion)){
+            //System.out.println("valor antes "+valorFuncion);
             valorFuncion += 38.2;
+            //System.out.println("valor despues "+valorFuncion);
         }
         
         if((this.obtenerMaximo() + this.obtenerMinimo() - valorFuncion ) <0){
@@ -490,5 +559,7 @@ public class AlgoritmoGenetico {
         }
         return minimo;
     }
+
+    
     
 }
