@@ -8,8 +8,11 @@ package com.app.tarea2io.main;
 import java.util.ArrayList;
 
 /**
- *
- * @author benja
+ * Esta clase inicializa los costos para utilizar el algoritmo genético.
+ * @author María Ignacia Morales Soriano
+ * @author Andrés Vidal Soto
+ * @author Benjamín Rojas Henríquez
+ * @version 1.3
  */
 public class main {
     public static void main(String arg[]){
@@ -72,6 +75,7 @@ public class main {
             ag.mostrarResultados();
         }
         
+        ag.inicializarMetaheuristica();
         
         //System.out.println(costos.length+ " "+ solucionInicial1.length);
         
