@@ -1,0 +1,53 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'D:/Escritorio Real/1 Universidad/8vo Semestre/Investigacion de operaciones/Proyecto/tarea2IO/tarea2IO/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Escritorio Real/1 Universidad/8vo Semestre/Investigacion de operaciones/Proyecto/tarea2IO/tarea2IO/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'tarea2IO 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'D:/Escritorio Real/1 Universidad/8vo Semestre/Investigacion de operaciones/Proyecto/tarea2IO/tarea2IO/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'tarea2IO 1.0-SNAPSHOT API'
+com.app.tarea2io.main
+'D:/Escritorio Real/1 Universidad/8vo Semestre/Investigacion de operaciones/Proyecto/tarea2IO/tarea2IO/src/main/java/com/app/tarea2io/main/AlgoritmoGenetico.java'
+'D:/Escritorio Real/1 Universidad/8vo Semestre/Investigacion de operaciones/Proyecto/tarea2IO/tarea2IO/src/main/java/com/app/tarea2io/main/Ciudad.java'
+'D:/Escritorio Real/1 Universidad/8vo Semestre/Investigacion de operaciones/Proyecto/tarea2IO/tarea2IO/src/main/java/com/app/tarea2io/main/LectorCSV.java'
+'D:/Escritorio Real/1 Universidad/8vo Semestre/Investigacion de operaciones/Proyecto/tarea2IO/tarea2IO/src/main/java/com/app/tarea2io/main/main.java'
+'D:/Escritorio Real/1 Universidad/8vo Semestre/Investigacion de operaciones/Proyecto/tarea2IO/tarea2IO/src/main/java/com/app/tarea2io/main/SimulatedAnnealing.java'
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\src\main\java = 1668822276153
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\allclasses-index.html = 1669408788265
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\allclasses.html = 1669408788280
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\allpackages-index.html = 1669408788268
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\constant-values.html = 1669408788134
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\deprecated-list.html = 1669408788277
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\element-list = 1669408788103
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\help-doc.html = 1669408788295
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\index-all.html = 1669408788257
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\index.html = 1669408788284
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\member-search-index.js = 1669408788252
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\member-search-index.zip = 1669408788254
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\overview-tree.html = 1669408788202
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\package-search-index.js = 1669408788238
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\package-search-index.zip = 1669408788248
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\script.js = 1669408788303
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\search.js = 1669408788308
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\stylesheet.css = 1669408788300
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\type-search-index.js = 1669408788249
+D:\Escritorio Real\1 Universidad\8vo Semestre\Investigacion de operaciones\Proyecto\tarea2IO\tarea2IO\target\site\apidocs\type-search-index.zip = 1669408788251

@@ -14,7 +14,7 @@ public class AlgoritmoGenetico {
     private double[] costos;
     private Random generadorNumAleatorio;
     private Ciudad[] ciudades;
-    private double[] asignacion;
+    private double[] asignacion; // se debe eliminar
     private int[][] solucionesIniciales;
     
     /**
@@ -49,13 +49,13 @@ public class AlgoritmoGenetico {
     
     public void inicializarMetaheuristica(){
         //int[][] poblacionInicial = this.solucionesIniciales;
-        // paso 1)
+        // paso 1) Se seleccionan los padres
         int[][] a = this.seleccionRuleta(2);// (2, solucionesIniciales)
         
         for(int j = 0; j < 1; j++){
-            // paso 2)
+            // paso 2) Se cruzan (recombinan) los padres y se crean los hijos
             int[][] hijos = this.cruzamientoEnDosPuntos(a[0], a[1]);
-            // paso 3)
+            // paso 3) Se mutan los hijos
             hijos = this.mutacion(hijos);
             
             for(int i = 0; i < hijos.length; i++){
@@ -155,7 +155,6 @@ public class AlgoritmoGenetico {
      * @param hijos Matriz que contiene los hijos obtenidos por el método cruzamientoEnDosPuntos().
      * @return Se retornan los hijos mutados.
      */
-    
     public int[][] mutacion(int[][] hijos){
         for(int k = 0; k < hijos.length; k++){
             
@@ -194,8 +193,8 @@ public class AlgoritmoGenetico {
         int[][] solucionesEscogidas = new int[numeroSoluciones][36]; // En este Array se guardan las soluciones escogidas de las soluciones de la población inicial.
         ArrayList<Double> probabilidadSoluciones; // En el arraylist se guardan las probabilidades acumuladas
         int[] indicesUsados = new int[numeroSoluciones]; // Este array guarda los índices de las soluciones de la población inicial que ya han sido seleccionadas.
-        double suma = 0; // Este valor guardará la suma de las funciones objetivos de cada solucion de la poblacion Inicial (en este caso, de minimización).
-        double aux = 0; // Este valor sirve para calcular las probabilidades acumuladas.
+        double suma; // Este valor guardará la suma de las funciones objetivos de cada solucion de la poblacion Inicial (en este caso, de minimización).
+        double aux; // Este valor sirve para calcular las probabilidades acumuladas.
         double nRandom; // Este valor sirve para obtener un número aleatorio entre 0 y 1 para escoger la solución inicial.
         
         for(int i = 0; i < indicesUsados.length; i++){

@@ -8,8 +8,11 @@ package com.app.tarea2io.main;
 import java.util.Random;
 
 /**
- *
- * @author benja
+ * Esta clase contiene los atributos y métodos de simulated annealing
+ * @author María Ignacia Morales Soriano
+ * @author Andrés Vidal Soto
+ * @author Benjamín Rojas Henríquez
+ * @version 1.3
  */
 public class SimulatedAnnealing {
     private double temperatura;
