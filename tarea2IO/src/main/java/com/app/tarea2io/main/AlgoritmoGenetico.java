@@ -53,7 +53,6 @@ public class AlgoritmoGenetico {
         // paso 1) Se seleccionan los padres
         int[][] a = this.seleccionRuleta(2);// (2, solucionesIniciales)
         
-        for(int j = 0; j < 1; j++){
             // paso 2) Se cruzan (recombinan) los padres y se crean los hijos
             int[][] hijos = this.cruzamientoEnDosPuntos(a[0], a[1]);
             // paso 3) Se mutan los hijos
@@ -69,7 +68,6 @@ public class AlgoritmoGenetico {
             }
             // paso 4)
             this.solucionesIniciales = seleccionElitista(hijos);
-        }
     }
     public void mostrarResultados(){
         //muestra las soluciones seleccionadas 

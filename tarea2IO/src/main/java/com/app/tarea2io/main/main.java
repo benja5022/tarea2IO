@@ -46,28 +46,13 @@ public class main {
         
         AlgoritmoGenetico ag = new AlgoritmoGenetico(costos, coleccionCiudades,soluciones);
         //ag.imprimirCiudades();
-        ag.imprimirSoluciones();
-        
-        for(int i = 0; i < soluciones.length ; i++)
-        {
-            //valorFuncion[i] = ag.calculoFuncionObjetivo(i);
-            ag.cumpleRestriccion(i);
-        }
-        
-        System.out.println("");
-        for(int i = 0; i < soluciones.length ; i++)
-        {
-            //valorFuncion[i] = ag.calculoFuncionObjetivo(i);
-            System.out.println(ag.calculoFuncionObjetivo(i));
-        }
-        System.out.println("");
         
         //ag.cruzamientoEnDosPuntos(1, 2);
         
         //ag.seleccionRuleta(2);
         System.out.println("Generacion inicial");
         ag.mostrarResultados();
-        for(int i = 0 ; i < 10; i++){
+        for(int i = 0 ; i < 1000; i++){
             
             ag.inicializarMetaheuristica();
             System.out.println(" ");
